@@ -22,11 +22,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     
-    - name: Compilar codigo #Compila el codigo usando el comando javac.
-      run: javac -cp .:lib/junit-jupiter-api_5.9.2.jar:lib/junit-jupiter-engine_5.9.2.jar:lib/org.apiguardian.api_1.1.2.jar:lib/org.opentest4j_1.2.0.jar mercadotech/src/productos/ProductoTest.java mercadotech/src/productos/Producto.java
-    
-    - name: Ejecutar las pruebas #Ejecuta las pruebas unitarias de la clase JavaTest.
-      run: java -jar lib/junit-platform-console-standalone-1.9.2.jar --class-path=lib/junit-jupiter-api_5.9.2.jar:lib/junit-jupiter-engine_5.9.2.jar:lib/org.apiguardian.api_1.1.2.jar:lib/org.opentest4j_1.2.0.jar --select-class=mercadotech.src.productos.ProductoTest
+    - name: Compile
+      run: javac -cp "lib/*" mercadotech/src/test/ProductoTest.java mercadotech/src/main/Producto.java
+
+    - name: Run Unit Tests
+      run: java -cp "lib/*:mercadotech/src/test" org.junit.platform.console.ConsoleLauncher --scan-class-path --details=tree
       
     - name: Mensaje de Listo 
       run: echo "Listas las pruebas maestro!!"
