@@ -26,7 +26,7 @@ jobs:
       run: javac -cp .:lib/junit-jupiter-api_5.9.2.jar:lib/org.apiguardian.api_1.1.2.jar:lib/org.opentest4j_1.2.0.jar mercadotech/src/productos/ProductoTest.java mercadotech/src/productos/Producto.java
     
     - name: Ejecutar las pruebas #Ejecuta las pruebas unitarias de la clase JavaTest.
-      run: java -cp .:lib/junit-jupiter-engine_5.9.2.jar:lib/junit-jupiter-api_5.9.2.jar:lib/org.apiguardian.api_1.1.2.jar:lib/org.opentest4j_1.2.0.jar mercadotech/src/productos/ProductoTest
+      run: java -cp .:lib/junit-jupiter-engine_5.9.2.jar:lib/junit-jupiter-api_5.9.2.jar:lib/org.apiguardian.api_1.1.2.jar:lib/org.opentest4j_1.2.0.jar --class-name= mercadotech.src.productos.ProductoTest
       
     - name: Mensaje de Listo 
       run: echo "Listas las pruebas maestro!!"
